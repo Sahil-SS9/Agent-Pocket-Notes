@@ -4,12 +4,24 @@ Private desktop notes for agent chats. Store, CLI and plugin remain stdlib-only.
 The optional desktop extra provides Qt Quick; legacy Tk stays available.
 Saving, pinning and searching never send data or start an agent.
 
+## Screenshots
+
+Real captures from the desktop app, with synthetic notes.
+
+| Note editor | Agent history | Grouped by harness |
+| --- | --- | --- |
+| ![Note editor](docs/screenshots/01-note-editor.png) | ![Agent history](docs/screenshots/02-agent-history.png) | ![History grouped by harness](docs/screenshots/03-agent-history-by-harness.png) |
+
+| Send to an agent | Appearance | Sticker Club skin |
+| --- | --- | --- |
+| ![Send to an agent](docs/screenshots/04-send-to-an-agent.png) | ![Appearance settings](docs/screenshots/05-appearance-settings.png) | ![Sticker Club skin](docs/screenshots/07-sticker-club.png) |
+
 ## Install
 
 Python 3.12+:
 
 ```sh
-uv tool install --python 3.12 '/absolute/path/sticky_intent-0.4.0-py3-none-any.whl[desktop]'
+uv tool install --python 3.12 '/absolute/path/sticky_intent-0.5.0-py3-none-any.whl[desktop]'
 sticky doctor
 sticky install-launcher
 ```
@@ -34,7 +46,7 @@ xvfb-run -a uv run --locked --extra desktop pytest -q
 
 ## Desktop
 
-B / Pocket Notes is compact and note-first. Collection opens on demand instead
+Pocket Notes is compact and note-first. Collection opens on demand instead
 of squeezing the editor into a stacked workspace. The editor remains alive
 across themes, library, capture, collapse and icon to preserve caret/undo.
 
