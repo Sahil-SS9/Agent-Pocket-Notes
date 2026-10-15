@@ -1,0 +1,11 @@
+name: sticky-intent
+version: "0.5.0"
+description: "Local sticky board: /sticky, @note and sticky_notes. Classic CLI send targets only."
+author: "Sahil Saghir"
+provides_tools: [sticky_notes]
+provides_hooks: [on_session_start, pre_llm_call]
+config_schema:
+  autostart_widget:
+    type: boolean
+    default: false
+requires_env: []

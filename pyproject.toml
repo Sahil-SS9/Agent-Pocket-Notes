@@ -1,0 +1,35 @@
+[project]
+name = "sticky-intent"
+version = "0.5.0"
+description = "Local sticky notes for your agent: board, CLI and harness adapters."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{name = "Sahil Saghir"}]
+dependencies = []
+
+[project.scripts]
+sticky = "sticky_intent.boot:main"
+
+[project.entry-points."hermes_agent.plugins"]
+sticky-intent = "sticky_intent.hermes_plugin"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sticky_intent*"]
+
+[tool.setuptools.package-data]
+sticky_intent = ["assets/*.svg", "assets/*.png", "assets/*.qml", "assets/*.txt"]
+
+[project.optional-dependencies]
+desktop = ["PySide6-Essentials==6.12.0"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+markers = ["gui: graphical tests (Xvfb only)", "slow: real Hermes host tests"]
+addopts = "--strict-markers"
